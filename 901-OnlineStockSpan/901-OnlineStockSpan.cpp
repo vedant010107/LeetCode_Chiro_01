@@ -8,17 +8,13 @@ public:
     }
     
     int next(int price) {
-        // 100,1 -> 80,1 -> 60,1 -> 70,2 -> 60,1 -> 75,4 -> 85,6
-        // curr price included
-        int span = 1;
-        // if greater element found then stop
+        int s = 1;
         while (!st.empty() && st.top().first <= price) {
-            span += st.top().second;
+            s += st.top().second;
             st.pop();
         }
-        // push curr price
-        st.push({price, span});
-        return span;
+        st.push({price, s});
+        return s;
     }
 };
 
