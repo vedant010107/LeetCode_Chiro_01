@@ -13,17 +13,17 @@ public:
         
         for (int i = 0; i < n; ++i) {
             while (!s.empty() && ans[i] > ans[s.top()]) {
-                int index = s.top();
+                int id = s.top();
                 s.pop();
-                ans[index] = ans[i];  
+                ans[id] = ans[i];  
             }
             s.push(i);  
         }
         
-        while (!s.empty()) {
-            int index = s.top();
+        while (!s.empty()) { 
+            int id = s.top();
             s.pop();
-            ans[index] = 0;
+            ans[id] = 0;
         }
         return ans;
     } 
