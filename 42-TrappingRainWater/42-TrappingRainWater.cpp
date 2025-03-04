@@ -1,11 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
 
 class Solution {
 public:
     int trap(vector<int>& height) {
-        ios::sync_with_stdio(0); cin.tie(0); cout.tie(0); 
-
+       
         stack<int> st; 
         int wa = 0, n = height.size();
 
@@ -25,7 +22,6 @@ public:
             st.push(i);
         }
 
-        cout << flush; 
         return wa;
     }
 };
